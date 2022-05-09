@@ -1,12 +1,11 @@
 var http = require('http');
 var fs = require('fs');
 
-
 var app = http.createServer(function (request, response) {
     var url = request.url;
 
     if (url == '/') {
-        url = 'index.html';
+        url = '/index.html';
     }
     if (url == '/favicon.ico') {
         response.writeHead(404);
@@ -14,8 +13,7 @@ var app = http.createServer(function (request, response) {
         return;
     }
     response.writeHead(200);
-    //console.log(dirname + url);
-    response.end(fs.readFileSync(dirname + url));
+    response.end(fs.readFileSync(__dirname + url));
 
 });
 app.listen(3000);
