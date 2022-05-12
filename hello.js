@@ -16,7 +16,7 @@ var app = http.createServer(function (request, response) {
     }
     response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     //response.end(fs.readFileSync(__dirname + _url));
-
+    // fs.realFile(`data/${queryData.id}`, 'utf8', function(err, data) { 대충 여기서 html 입력받고 변수에 넣어주면 됨 에러체크는 덤})) 일부만 변경하는 코드
     var template = fs.readFileSync(__dirname + _url, 'utf8');
     response.end(template);
 });
